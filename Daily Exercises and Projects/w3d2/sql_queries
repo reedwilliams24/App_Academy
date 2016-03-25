@@ -1,0 +1,8 @@
+      SELECT
+        users.*
+      FROM
+        questions
+      JOIN users ON users.id = questions.author_id
+
+      WHERE
+        questions.id = 1;
