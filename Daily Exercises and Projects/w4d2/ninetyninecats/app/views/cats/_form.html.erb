@@ -1,0 +1,40 @@
+<body>
+  <% @cat.errors.full_messages.each do |err_msg| %>
+    <li><%= err_msg %></li>
+  <% end %>
+  
+    <label for="POST-name">Name:</label>
+    <input id="POST-name" type="text" name = "cat[name]"
+    value = "<%= @cat.name%>">
+    <br>
+
+    <label for="POST-birthday">birthday:</label>
+    <input id="POST-birthday" type="date" name = "cat[birth_date]"
+    value = "<%= @cat.birth_date%>">
+    <br>
+
+    <label for="POST-sex">Sex:</label>
+    <input type="radio" name="cat[sex]" value="M" <%= "checked" if @cat.sex == "M"%>> Male
+    <input type="radio" name="cat[sex]" value="F"<%= "checked" if @cat.sex == "F"%>> Female
+    <br>
+
+    <label for="POST-color">Color:</label>
+    <select name = "cat[color]">
+      <option value="black"<%="selected" if @cat.color == "black"%>>Black</option>
+      <option value="white"<%="selected" if @cat.color == "white"%>>White</option>
+      <option value="tan"<%="selected" if @cat.color == "tan"%>>Tan</option>
+      <option value="orange"<%="selected" if @cat.color == "orange"%>>Orange</option>
+      <option value="brown"<%="selected" if @cat.color == "brown"%>>Brown</option>
+      <option value="grey"<%="selected" if @cat.color == "grey"%>>Grey</option>
+    </select>
+    <br>
+
+    <label for="POST-description">Description:</label>
+    <textarea name="cat[description]" id="cat_description"><%=@cat.description%></textarea>
+    <br>
+
+    <input type="submit" value="Save">
+
+  </form>
+
+</body>

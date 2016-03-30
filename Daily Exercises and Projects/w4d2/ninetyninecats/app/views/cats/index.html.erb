@@ -1,0 +1,8 @@
+<head> THIS IS A LIST OF CATS </head>
+<ol>
+  <% Cat.all.each do |cat|%>
+  <li>
+    <%= link_to cat.name, cat_url(cat) %>
+  </li>
+  <% end %>
+</ol>
